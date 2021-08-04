@@ -5,7 +5,14 @@ class MergeSort {
     int [] sorted = mergeSort(arr, 0 , arr.length-1);
     display(sorted);
     
- } 
+ }
+   
+  public static void display(int [] arr) {
+    
+    for(int i =0; i< arr.length ; i++) {
+      System.out.print(arr[i]+ " ");
+    }
+  }
   
  public static int [] mergeSort(int [] arr, int start , int end) {
     
