@@ -3,7 +3,7 @@ import java.util.*;
 
 class Solution {
  public static void main(String[] args) {
-    int arr[] = new int {-10, 1, 3, 8, -13, 32, 9, 5};
+    int arr[] = new int[] {-10, 1, 3, 8, -13, 32, 9, 5};
     
     int [] sorted = insertionSort(arr);
     display(sorted);
