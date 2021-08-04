@@ -1,7 +1,7 @@
 import java.io.*;
 import java.util.*;
 
-class Solution {
+class InsertionSort {
  public static void main(String[] args) {
     int arr[] = new int[] {-10, 1, 3, 8, -13, 32, 9, 5};
     
