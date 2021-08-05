@@ -16,7 +16,7 @@ class TreeNode {
   }
 }
 
-class Solution {
+class SearchBinaryTree {
   public static void main(String[] args) {
       TreeNode tree = new TreeNode(8, new TreeNode(3, 
                                           new TreeNode(1, null, null),
