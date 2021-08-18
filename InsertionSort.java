@@ -14,29 +14,29 @@ class InsertionSort {
       System.out.print(arr[i]+ " ");
     }
   }
-  public static int[] insertionSort(int [] arr) {
+   public static int[] insertionSort(int [] arr) {
+      
+    for(int i=0;i<arr.length-1;i++) {
+        
+        if(arr[i+1] >= arr[i]) continue; 
+      
+        int temp = arr[i+1];
+        int j =i;
+        
+        for(j=i;  j>=0 && arr[j]>temp; j--) {
+            arr[j+1] = arr[j];
+        }
+          
+        if(j>=0 && temp > arr[j]) {
+            arr[j+1] = temp;
+        } else if(j<0) {
+            arr[0] = temp;
+        }
+      
+    }
     
-    int i= 0, j = 0;
-    for( i=0; i<arr.length-1; i++) {
-      for( j=i+1; j<arr.length && arr[j]>=arr[i]; j++) {
-        i++; 
-      }
-      if(arr[j]< arr[i] && j< arr.length) insert(arr, i, j, arr[j]);
- 
-    }
     return arr;
-  } 
-
-  public static void insert(int [] arr, int end, int ele_pos, int ele) {
-    int j=ele_pos;
-    for(j=ele_pos-1; j>=0 && ele <= arr[j]; j--) {
-       arr[j+1] = arr[j];
-    }
-
-    if(j>=0 && ele > arr[j]) {
-      arr[j+1] = ele;
-    } else if(j<0) {
-      arr[0] = ele;
-    }
+    
   }
+    
 }
