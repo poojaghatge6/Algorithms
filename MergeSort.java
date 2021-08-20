@@ -25,11 +25,11 @@ class MergeSort {
     int [] arr1 = mergeSort(arr, start, mid);
     int [] arr2 = mergeSort(arr, mid+1, end);
    
-    return merge(arr, arr1, arr2);
+    return merge( arr1, arr2);
     
   }
   
-  public static int [] merge(int [] arr, int [] arr1, int [] arr2){
+  public static int [] merge( int [] arr1, int [] arr2){
     
       int num1 = i < arr1.length ? arr1[i] : Integer.MAX_VALUE;
       int num2 =  j < arr2.length ? arr2[j] : Integer.MAX_VALUE;
