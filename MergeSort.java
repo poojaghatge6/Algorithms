@@ -30,34 +30,19 @@ class MergeSort {
   }
   
   public static int [] merge(int [] arr, int [] arr1, int [] arr2){
-
-    int i= 0, j= 0;
-    int len = arr1.length + arr2.length;
-    int[] arr3 = new int[len];
-    int k=0;
     
-    while(i< arr1.length && j < arr2.length) {
-      if(arr1[i]<= arr2[j]) {
-        arr3[k]= arr1[i];
+      int num1 = i < arr1.length ? arr1[i] : Integer.MAX_VALUE;
+      int num2 =  j < arr2.length ? arr2[j] : Integer.MAX_VALUE;
+      
+      if(num1<num2) {
+        arr3[k++] = num1;
         i++;
-        k++;
       } else {
-        arr3[k]= arr2[j];
+        arr3[k++] = num2;
         j++;
-        k++;
       }
     }
-    
-    while(i< arr1.length ) {
-        arr3[k]= arr1[i];
-        i++;
-        k++;
-    }
-    while(j < arr1.length ) {
-        arr3[k]= arr2[j];
-        j++;
-        k++;
-    }
+ 
     return arr3; 
   }
 }
