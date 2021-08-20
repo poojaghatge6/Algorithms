@@ -45,24 +45,18 @@ class Solution{
     if(head.next == null) return head.val;
     
     ListNode slow=null, fast=head;
-    int count =1;
     
     while(fast!=null) {
       fast = fast.next;
-      
+
       if(fast!=null) {
-        count = count+ 1;
         fast = fast.next;
-        if(fast!=null) count = count+1;
-        if(slow!=null) slow = slow.next;
-        else slow = head;
       }
+      if(slow!=null) slow = slow.next;
+      else slow = head;
+      
     }
     
-    if(count%2 == 1) {
-      slow = slow.next;
-    }
- 
     return slow.val;
     
     
