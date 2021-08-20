@@ -46,27 +46,23 @@ class ReverseLinkedList {
   
   public static ListNode reverse(ListNode root) {
     
-    if(root == null || root.next == null) return root;
+     if(root == null || root.next == null) return root;
     
-    ListNode a = root, b = root.next, c = b.next ;
+    ListNode curr=root, prev=null, next=curr.next;
     
-    while(b!= null) {
-    
-      b.next = a;
+    while(curr!=null) {
       
-      if(a == root) {
-        a.next = null;
-      }
+      curr.next = prev;
       
-      a = b;
-      b = c;
+      prev= curr;
       
-      if(c != null) c = c.next;
-      else return a;
+      curr = next;
+      
+      if(next!=null) next = next.next;
     
     }
     
-    return a;
+    return prev;
   }
 }
      
