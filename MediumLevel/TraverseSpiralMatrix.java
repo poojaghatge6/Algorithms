@@ -1,8 +1,6 @@
 class Solution {
     public List<Integer> spiralOrder(int[][] matrix) {
-        
-        if(matrix.length == 0) return new ArrayList<Integer>();
-        
+    
         List<Integer> list = new ArrayList<Integer>();
         
         int i=0, j=0, up=0, down = matrix.length - 1, 
@@ -13,21 +11,23 @@ class Solution {
         
         while(list.size() < len){
             
-            for( j=left, i =up; r && j <=right; j++) {
-                list.add(matrix[i][j]);
+            
+            for( j=left; r && j <=right; j++) {
+                list.add(matrix[up][j]);
             }
             
-            for(j=right, i =down; l && j>=left ; j--) {
-                list.add(matrix[i][j]);
+            for(j=right; l && j>=left ; j--) {
+                list.add(matrix[down][j]);
             }
 
-            for( i=down, j =left;  u && i >=up ; i--) {
-                list.add(matrix[i][j]);
+            for( i=down;  u && i >=up ; i--) {
+                list.add(matrix[i][left]);
             }
 
-            for(i=up, j = right; d && i <=down; i++) {
-                list.add(matrix[i][j]);
+            for(i=up; d && i <=down; i++) {
+                list.add(matrix[i][right]);
             }
+
 
             if(r == true) {
                 r = false;
