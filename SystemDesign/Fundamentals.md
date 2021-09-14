@@ -2,10 +2,15 @@ Details
 Load Balancers
 
 Analogous Terminology
+
 Hardware that runs your code: server == machine == node == computer == instance == box
+
 Collection of servers: fleet == pool == cluster
+
 A quantity of user requests: traffic == requests == call volume == calls
+
 Microservice: load balancer + fleet of nodes hosting the same code
+
 Purpose
 
 Systems need to increase their hardware capacity as they receive more requests. This can be achieved by vertical scaling (upgrading the hardware of a single computer similar to upgrading parts of your gaming computer) or horizontal scaling (increasing the number of servers running the same code and handling a subset of the total traffic).
