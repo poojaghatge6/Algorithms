@@ -1,82 +1,5 @@
-/*
- * Click `Run` to execute the snippet below!
- */
-
 import java.io.*;
 import java.util.*;
-
-/*
- * To execute Java, please define "static void main" on a class
- * named Solution.
- *
- * If you need more classes, simply define them inline.
-
-Q. Boggle is played on a 4x4 grid. Each square on the grid has a letter. The goal is to make as many words as possible by starting anywhere on the board and the moving to any adjacent letters in the grid (horizontally, vertically or diagonally). Given a 4x4 grid and an array containing all valid words, implement an algorithm that returns all the valid words that can be found in the grid.
-
-Examples:
-• Given a board:
-  [
-    'COPS',
-    'EDXZ',
-    'RLQU',
-    'BOKI'
- ]
-• And words ['CODE', 'CODER', 'MISSING']
-Return ['CODE', 'CODER'] (order does not matter)
-
- */
- 
-
-//  root         [ c,                             m]
-//                 o                              i
-//                 d                              s
-//                 e                             s
-//                 r(isEnd = true)                i
-//                                                n
-//                                                g(isEnd = true)  
-   
-   
-   
-   
-   
-//      [
-//         'C OPS',
-//         'EDXZ',
-//         'RLQU',
-//         'BOKI'
-//      ]
-
-//   C
-  
-//    set<>
-   
-   
-//    visited<C>
-  
-//   o                                   d                                 e
-  
-//   visited<C, O>                    visited<C, D>                       visited<C, E>
-   
-//   D
-  
-//   visited<C, O, D>  
-   
-   
-//   e                                       l      x
-  
-//    visited<C, O, D, E>  
-   
-//    set< code>
-   
-  
-   
-//    c.            d.       r
-   
-//                         visited<C, O, D, E, R>  
-   
-//                         set< code, coder>
-                          
-     
 
 class TrieNode {
 
@@ -175,6 +98,8 @@ class Trie {
       
         return false;
       } 
+      
+       curr  = curr.children[ch - 'a'];
     
     }
     
@@ -206,13 +131,14 @@ class Trie {
     
     
     if(depth == word.length()-1) {
-      char ch = word.charAt(depth);
-        
-      curr.children[ch - 'a'].isEnd = false;
+     
+      curr.isEnd = false;
 
       if( isEnd(curr)) {
         return null;
       }
+      
+      return curr;
     }
     
     
@@ -301,6 +227,13 @@ class Solution {
      if(i<0 || j<0 || j>board[0].length-1 || i> board.length-1) return;
     
       char c = board[i][j];
+     
+     int hash = i*board[0].length + j;
+     if(visited.contains(hash)) return;
+      else {
+          visited.add(hash);
+      }
+
     
      
      StringBuilder str = new StringBuilder(prefix);
@@ -311,9 +244,7 @@ class Solution {
      
      if(trie.startsWith(new_prefix)) {
         
-        if(!visited.contains(i*board[0].length + j)) {
-          
-           visited.add(i*board[0].length + j);
+       
           
           boolean isInTrie = trie.search(new_prefix);
           System.out.println("searched " + new_prefix + ": " + isInTrie);
@@ -329,7 +260,7 @@ class Solution {
           boogleBoardC(i,j+1,new_prefix, trie, new HashSet<>(visited), ans, board);
           boogleBoardC(i-1,j,new_prefix, trie, new HashSet<>(visited),  ans, board);
           boogleBoardC(i,j-1,new_prefix, trie, new HashSet<>(visited),  ans, board);
-        }
+        
   
   
       }
@@ -337,9 +268,3 @@ class Solution {
    }
   
 }
-
-
-
-
-
-
