@@ -50,6 +50,56 @@ class GNode {
     
     return false;
   }
+  
+  
+  
+  public boolean hasPathToDFS(GNode node) {
+    
+    
+    return hasPathToRecurr(node, this, new HashSet<GNode>());
+    
+    
+    
+  }
+  
+  
+  public boolean hasPathToRecurr(GNode node, GNode root, HashSet<GNode> visited) {
+    
+    if(root == null) return false;
+    else {
+    
+      if( visited.contains(root)) return false;
+      else {
+        
+        visited.add(root);
+        if(root == node) return true;
+        else {
+        
+          
+          boolean hasPath = false;
+          if(root.children!=null) {
+            for( int i=0; i<root.children.length; i++) {
+              
+              System.out.println(" val: " + root.children[i].value + "root: " + root.value);
+
+              hasPath = hasPath || hasPathToRecurr(node, 
+                                   root.children[i], 
+                                   new HashSet<GNode>(visited)); 
+
+            }
+            return hasPath;
+          }
+          
+        }
+      
+      }
+    }
+    
+    return false;
+    
+    
+  }
+  
         
   
 }
