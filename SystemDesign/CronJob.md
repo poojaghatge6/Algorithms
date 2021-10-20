@@ -11,7 +11,11 @@ https://crontab.guru/
 Use-Cases
 
 Nightly backups
+
 Hourly log compression
+
 Daily analytics processing
+
 Planning around holidays and large events
+
 Anything that repeats on any timescale
