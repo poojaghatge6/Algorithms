@@ -23,3 +23,10 @@ https://youtu.be/KlXhee6R0rE
 Explanation:
 
 https://github.com/RickSayd/navigating-system-design/blob/master/basics/sharding.md
+
+
+
+
+All types of databases can be distributed so choose your database based on the required functionality for your system instead of the performance and scale they’re supposedly capable of handling (it’s a myth that relational databases can only vertically scale and handle small scale):
+
+https://www.quora.com/Is-sharding-not-as-popular-or-more-difficult-with-Relational-SQL-databases
