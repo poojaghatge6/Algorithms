@@ -14,7 +14,6 @@ bank = ["a","b","ba","bca","bda","bdca"] ==> 4
 bank = ["ba", "a","b", "bca","bda","bdca"] 
 
 
-
  0  1.  2.   3.   4.    5
 
  [ "a","b", "ba", "ca", "bca", ]
@@ -28,7 +27,6 @@ O(n*m)
 word = "a"
 
 curr_index = 1
-
 
 a
 
@@ -53,44 +51,20 @@ a
     
 ["a", "ba", "bca"], [ "a" "ca", "bca"]
 
-
-   
-     
-
-
-
-
-   
-     
    List<word>  findSuccesor (word, bank, current_index) {  a 
    
        List<List<word>> ans  = List
        int cur_length = word.length;
-       
-       
-       
+
        int i = current_index;
        
        while(bank[i].length == cur_length +1) {
        
           List<words> sucessors = findSuccesor( bank[i], bank, i+1)
-      }
-       
-       
-       
-       
-       
-       
-       
-      
+      } 
    
    }
- 
- 
- 
- 
- 
- 
+
   xbxax => "bca"
   
  "a"  ->  "ba" =>{ a : ["a", "ba", "bca"], []},
@@ -98,37 +72,22 @@ a
  
  "b" -> "ba"   =>  b :  ["b", "ba", "bca"], []}
  
- 
   
   { a : ["a", "ba", "bca"],
- 
- 
-    b :  ["b", "ba", "bca"]
-    
-    
+    b :  ["b", "ba", "bca"]    
     }
 
 
  [ "a","b", "ba", "bd", "bca"]
 
-
-
  [ "a","b", "ba", "bd"]
  
  
  { a : ["a", { "ba", ca } ],
- 
- 
-    b :  ["b", "ba"]
-    
-    
-  }
-  
-  
-  
-  
-  
 
+    b :  ["b", "ba"]
+
+  }
 
 smallest_length = 1;
 
@@ -142,8 +101,6 @@ dict = { "a" : ["a"] }
         
         
      for
-        
-      
      
   }
 
@@ -181,31 +138,17 @@ class Solution {
     List<String> longest;
   
     public List<List<String>> findLongestListOfSccessors( String[] bank) {
-    
-    
-      
        Arrays.sort(bank, (a, b) => {
           return a.length() - b.length();
        });
-    
-      
+   
       for(int i=0;i<bank.length; i++) {
         
           findSuccesor(word, bank, i);
               
       }
-      
-      
       return longest;
-         
-    
-    
     }
-  
-  
-  
-  
-  
   
   
     public List<List<String>> findSuccesor(String word, String[] bank, int current_index) {  
@@ -221,42 +164,27 @@ class Solution {
        int i = current_index;
        
        while(bank[i].length == cur_length +1) {
-         
-          
+
          if( isSuccesor(word, bank[i]) {
            
            List<List<String>> sucessors = findSuccesor( bank[i], bank, i+1);
-           
+          
            for( List<String> path: succesors) {
-            
              path.add(word);
-              
              ans.add(path);
-             
              if(path.size() > max) {
                 max = path.size();
                 longest = path;
              }
-           
            }
          } 
        }
             
        return ans;
-   
    }
-  
   
    public boolean isSuccesor(String word1, String word2) {
-     
-     
-     
-     
    
    }
-  
-  
-  
-  
   
 }
