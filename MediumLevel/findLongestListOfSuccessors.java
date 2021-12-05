@@ -68,15 +68,13 @@ a
   xbxax => "bca"
   
  "a"  ->  "ba" =>{ a : ["a", "ba", "bca"], []},
- 
+
  
  "b" -> "ba"   =>  b :  ["b", "ba", "bca"], []}
  
-  
   { a : ["a", "ba", "bca"],
     b :  ["b", "ba", "bca"]    
     }
-
 
  [ "a","b", "ba", "bd", "bca"]
 
@@ -93,17 +91,12 @@ smallest_length = 1;
 
 dict = { "a" : ["a"] }
 
-
   for (word in i) {
      
      if word is of length smallest 
         dict.add{ word, [word] }
-        
-        
-     for
-     
+     for  
   }
-
    isPredecessor()
 
 
@@ -122,17 +115,17 @@ import java.util.*;
  */
 
 class Solution {
-  public static void main(String[] args) {
-    ArrayList<String> strings = new ArrayList<String>();
-    strings.add("Hello, World!");
-    strings.add("Welcome to CoderPad.");
-    strings.add("This pad is running Java " + Runtime.version().feature());
+    public static void main(String[] args) {
+      ArrayList<String> strings = new ArrayList<String>();
+      strings.add("Hello, World!");
+      strings.add("Welcome to CoderPad.");
+      strings.add("This pad is running Java " + Runtime.version().feature());
 
-    for (String string : strings) {
-      System.out.println(string);
+      for (String string : strings) {
+        System.out.println(string);
+      }
     }
-  }
-  
+
     int max = 0;
       
     List<String> longest;
